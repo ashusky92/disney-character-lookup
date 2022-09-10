@@ -3,7 +3,7 @@
   <p v-if="!characters">Loading...</p>
   <ul v-else class="charactersList">
     <li v-for="character in characters" :key="character._id">
-      <router-link :to="'/character/' + character._id">
+      <router-link :to="'/disney-character-lookup/character/' + character._id">
         <div
           class="character-tile"
           :style="{
@@ -36,9 +36,11 @@ export default {
     nextPage() {
       var pageUrl;
       if (this.page + 1 > this.totalPages) {
-        pageUrl = `/characters/${this.totalPages}`;
+        pageUrl = `/disney-character-lookup/characters/${this.totalPages}`;
       } else {
-        pageUrl = `/characters/${parseInt(this.page) + 1}`;
+        pageUrl = `/disney-character-lookup/characters/${
+          parseInt(this.page) + 1
+        }`;
       }
 
       return pageUrl;
@@ -46,9 +48,11 @@ export default {
     prevPage() {
       var pageUrl;
       if (this.page - 1 < 1) {
-        pageUrl = `/characters/1`;
+        pageUrl = `/disney-character-lookup/characters/1`;
       } else {
-        pageUrl = `/characters/${parseInt(this.page) - 1}`;
+        pageUrl = `/disney-character-lookup/characters/${
+          parseInt(this.page) - 1
+        }`;
       }
       return pageUrl;
     },

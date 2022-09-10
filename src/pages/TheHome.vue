@@ -6,7 +6,7 @@
     <a href="https://disneyapi.dev/" target="_blank">https://disneyapi.dev/</a>
   </p>
 
-  <router-link class="disney-entry" to="/characters">
+  <router-link class="disney-entry" to="/disney-character-lookup/characters">
     <span> Continue to Disney Characters </span>
     <font-awesome-icon icon="fa-solid fa-arrow-right" />
   </router-link>

@@ -27,23 +27,25 @@ const app = createApp(App);
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", redirect: "/home" },
-    { path: "/home", components: { header: TheHeader, default: TheHome } },
     {
-      path: "/characters/:page",
+      path: "/disney-character-lookup/",
+      components: { header: TheHeader, default: TheHome },
+    },
+    {
+      path: "/disney-character-lookup/characters/:page",
       components: { header: ListHeader, default: CharacterSelection },
       props: true,
     },
-    { path: "/characters", redirect: "/characters/1" },
+    { path: "/disney-character-lookup/characters", redirect: "/characters/1" },
     {
-      path: "/character/:id",
+      path: "/disney-character-lookup/character/:id",
       components: { header: DetailsHeader, default: CharacterDetails },
       props: true,
     },
     {
       // Details Page Tester
-      path: "/tester",
-      redirect: "/character/309",
+      path: "/disney-character-lookup/tester",
+      redirect: "/disney-character-lookup/character/309",
     },
   ],
   scrollBehavior() {

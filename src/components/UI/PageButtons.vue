@@ -15,14 +15,16 @@ export default {
   props: ["page", "totalPages"],
   computed: {
     nextPage() {
-      return `/characters/${parseInt(this.page) + 1}`;
+      return `/disney-character-lookup/characters/${parseInt(this.page) + 1}`;
     },
     prevPage() {
       var pageUrl;
       if (this.page - 1 < 1) {
-        pageUrl = `/characters/1`;
+        pageUrl = `/disney-character-lookup/characters/1`;
       } else {
-        pageUrl = `/characters/${parseInt(this.page) - 1}`;
+        pageUrl = `/disney-character-lookup/characters/${
+          parseInt(this.page) - 1
+        }`;
       }
       return pageUrl;
     },
